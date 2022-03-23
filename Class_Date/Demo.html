@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let MyDate = function(date,month,year){
+            this.date = date;
+            this.month = month;
+            this.year = year;
+            this.getDate = function(){
+                return this.date;
+            }
+            this.getMonth = function(){
+                return this.month;
+            }
+            this.getYear = function(){
+                return this.year;
+            }
+            this.setDay = function(date){
+                return this.date = date;
+            }
+            this.setMonth = function(month){
+                return this.month = month;
+            }
+            this.setYear = function(year){
+                return this.year = year;
+            }
+            this.setDate = function(date,month,year){
+                return this.date = date,this.month = month,this.year = year
+            }
+            this.toString = function(){
+                return `${this.date}/${this.month}/${this.year}`;
+            }
+        }
+        let Phone = new MyDate(2,2,1997);
+        let date = Phone.getDate();
+        let month = Phone.getMonth();
+        let year = Phone.getYear();
+        alert(`Ngày ${date} tháng ${month} năm ${year}`);
+        Phone.setDay(23);
+        Phone.setMonth(1);
+        Phone.setYear(1998);
+        Phone.setDate(3,3,1997);
+        alert(`Ngày ${Phone.getDate()} tháng ${Phone.getMonth()} năm ${Phone.getYear()}`);
+        alert(`${Phone.toString()}`);
+    </script>
+</body>
+</html>
